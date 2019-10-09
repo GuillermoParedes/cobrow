@@ -4,6 +4,7 @@ const observable = new Observable();
 const CONFIG = {
   DEBUG: true,
   DATE: true,
+  EMIT: true,
 };
 
 module.exports = function(config) {
@@ -38,6 +39,10 @@ module.exports = function(config) {
         );
       }
       _info.apply(ole, args);
+      // observable.broadcast({
+      //   type: 'info',
+      //   payload: args,
+      // });
     }
   };
 
@@ -65,7 +70,10 @@ module.exports = function(config) {
     }
   };
 
-  observable.subscribe(log);
+  observable.subscribe(data => {
+    console.log('data subscribe', data);
+  });
+
   return {
     log,
     error,

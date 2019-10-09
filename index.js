@@ -2,8 +2,15 @@ const logger = require('./src/console')({
   DATE: true,
 });
 
-logger.log('esto es un log');
+function isTestable(value) {
+  return function decorator(target) {
+    target.isTestable = value;
+  };
+}
 
-logger.info('esto es un info');
-logger.error('esto es un error');
-logger.warn('esto es un warn');
+@isTestable(true)
+class Person {}
+
+const person = new Person();
+
+console.log('PERSON', person);

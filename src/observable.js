@@ -11,11 +11,8 @@ class Observable {
     this.observers = this.observers.filter(subscriber => subscriber !== f);
   }
 
-  notify(data) {
-    this.observers.forEach(observer => {
-      console.log('observer', observer);
-      observer(data);
-    });
+  broadcast(data) {
+    this.observers.forEach(subscriber => subscriber(data));
   }
 }
 

@@ -1,0 +1,31 @@
+{
+  "name": "cobrow",
+  "version": "1.0.0",
+  "description": "Console to browser",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "build": "babel src/console.js --out-file cobrow.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuillermoParedes/cobrow.git"
+  },
+  "keywords": [
+    "console",
+    "browser",
+    "nodejs",
+    "debugger"
+  ],
+  "author": "@gddev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GuillermoParedes/cobrow/issues"
+  },
+  "homepage": "https://github.com/GuillermoParedes/cobrow#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.6.3",
+    "@babel/core": "^7.6.3",
+    "@babel/preset-env": "^7.6.3"
+  }
+}

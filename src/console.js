@@ -1,5 +1,6 @@
 const CURRENT = require('./utils').CURRENT;
 const Observable = require('./observable').Observable;
+const observable = new Observable();
 const CONFIG = {
   DEBUG: true,
   DATE: true,
@@ -24,7 +25,6 @@ module.exports = function(config) {
           CURRENT + '/' + new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds() + ': ',
         );
       }
-
       _log.apply(ole, args);
     }
   };
@@ -65,10 +65,7 @@ module.exports = function(config) {
     }
   };
 
-  const observable = new Observable();
-
   observable.subscribe(log);
-  observable.notify(log);
   return {
     log,
     error,
